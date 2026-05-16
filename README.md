@@ -81,6 +81,7 @@ Example `.env`:
 ```dotenv
 PORT=8787
 DATA_DIR=/mnt/user/appdata/iracing-race-radar/data
+IMAGE=ghcr.io/petrflorian/iracing-race-radar:latest
 TZ=Europe/Prague
 ```
 

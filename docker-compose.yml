@@ -1,6 +1,6 @@
 services:
   app:
-    image: iracing-race-radar:local
+    image: "${IMAGE:-iracing-race-radar:local}"
     container_name: iracing-race-radar
     build: .
     ports:

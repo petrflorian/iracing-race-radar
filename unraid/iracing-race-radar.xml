@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>iracing-race-radar</Name>
+  <Repository>ghcr.io/petrflorian/iracing-race-radar:latest</Repository>
+  <Registry>https://github.com/petrflorian/iracing-race-radar/pkgs/container/iracing-race-radar</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/petrflorian/iracing-race-radar/issues</Support>
+  <Project>https://github.com/petrflorian/iracing-race-radar</Project>
+  <Overview>Personal web app for tracking selected iRacing Sports Car series and owned tracks.</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8787]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/petrflorian/iracing-race-radar/main/unraid/iracing-race-radar.xml</TemplateURL>
+  <Config Name="WebUI Port" Target="8787" Default="8787" Mode="tcp" Description="Web UI port" Type="Port" Display="always" Required="true" Mask="false">8787</Config>
+  <Config Name="Data" Target="/app/.data" Default="/mnt/user/appdata/iracing-race-radar/data" Mode="rw" Description="Persistent app data: settings and imported schedule" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/iracing-race-radar/data</Config>
+  <Config Name="Timezone" Target="TZ" Default="Europe/Prague" Mode="" Description="Container timezone" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Prague</Config>
+  <Config Name="Node Environment" Target="NODE_ENV" Default="production" Mode="" Description="Runtime mode" Type="Variable" Display="advanced" Required="true" Mask="false">production</Config>
+  <Config Name="Internal Port" Target="PORT" Default="8787" Mode="" Description="Internal app port. Keep this set to 8787 unless the container image changes." Type="Variable" Display="advanced" Required="true" Mask="false">8787</Config>
+</Container>
