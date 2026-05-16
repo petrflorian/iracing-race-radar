@@ -201,7 +201,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [trackQuery, setTrackQuery] = useState("");
   const [ownedTrackQuery, setOwnedTrackQuery] = useState("");
-  const [weeksAhead, setWeeksAhead] = useState(4);
+  const [weeksAhead] = useState(4);
   const [view, setView] = useState<"watchlist" | "discover">("watchlist");
   const [loading, setLoading] = useState(true);
   const [importing, setImporting] = useState(false);
@@ -421,29 +421,6 @@ function App() {
           </button>
         </div>
       </header>
-
-      <section className="statusBand">
-        <div>
-          <span className={`source ${data?.source ?? "sample"}`}>
-            {data?.source === "pdf" ? "Imported PDF" : "Sample data"}
-          </span>
-          <p>{data?.message ?? "Zobrazuji lokální Sports Car kalendář."}</p>
-        </div>
-        <div className="statusActions">
-          <div className="rangeControl" aria-label="Kolik týdnů dopředu zobrazit">
-            {[2, 4, 6, 12].map((value) => (
-              <button
-                type="button"
-                key={value}
-                className={weeksAhead === value ? "active" : ""}
-                onClick={() => setWeeksAhead(value)}
-              >
-                {value}w
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {settingsOpen ? (
         <section className="settingsPage">
