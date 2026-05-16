@@ -21,6 +21,6 @@ mkdir -p backups
 STAMP="$(date +%Y%m%d-%H%M%S)"
 ARCHIVE="backups/iracing-race-radar-data-$STAMP.tgz"
 
-tar -czf "$ARCHIVE" "$DATA_DIR_VALUE"
+tar -C "$DATA_DIR_VALUE" -czf "$ARCHIVE" .
 
 echo "Backup created: $ARCHIVE"
